@@ -1,0 +1,215 @@
+
+     
+/* Main apartment details layout */
+.apartment-detail-main {
+    margin-left: 260px;
+    padding: 28px;
+    width: calc(100% - 260px);
+    max-width: 1500px;
+    box-sizing: border-box;
+    background: #f8fafc;
+    min-height: 100vh;
+    color: #0f172a;
+}
+
+/* Back button */
+.detail-back {
+    display: inline-block;
+    margin-bottom: 18px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.detail-back:hover {
+    color: #1e40af;
+    text-decoration: underline;
+}
+
+/* General content card */
+.detail-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 22px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+/* Apartment information layout */
+.detail-hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    gap: 22px;
+    align-items: start;
+}
+
+/* Apartment preview photo */
+.detail-photo {
+    display: block;
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #e2e8f0;
+}
+
+/* Apartment price */
+.detail-price {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #1d4ed8;
+    margin: 12px 0;
+}
+
+/* 360-degree viewer */
+#apartment360 {
+    width: 100%;
+    height: 700px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #e2e8f0;
+    position: relative;
+}
+
+/* Tour description */
+.viewer-help {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+/* Buttons */
+.detail-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 8px;
+    padding: 11px 15px;
+    background: #2563eb;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin: 4px 6px 0 0;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.detail-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.detail-button.secondary {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.detail-button.secondary:hover {
+    background: #cbd5e1;
+}
+
+/* Seven-room navigation buttons */
+.tour-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.tour-controls .detail-button {
+    margin: 0;
+}
+
+.tour-controls .detail-button.active {
+    background: #1e40af;
+    color: #ffffff;
+}
+
+/* Viewer status */
+#viewerStatus {
+    font-size: 0.9rem;
+    color: #475569;
+    margin-top: 12px;
+}
+
+/* Tablet screens */
+@media (max-width: 1000px) {
+    .apartment-detail-main {
+        padding: 22px;
+    }
+
+    .detail-hero {
+        grid-template-columns: 1fr;
+    }
+
+    #apartment360 {
+        height: 420px;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 850px) {
+    .apartment-detail-main {
+        margin-left: 0;
+        width: 100%;
+        padding: 16px;
+    }
+
+    .detail-card {
+        padding: 16px;
+    }
+
+    .detail-hero {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    #apartment360 {
+        height: 320px;
+    }
+
+    .detail-photo {
+        height: 250px;
+    }
+
+    .detail-price {
+        font-size: 1.25rem;
+    }
+
+    .tour-controls {
+        gap: 8px;
+    }
+
+    .tour-controls .detail-button {
+        flex: 1 1 auto;
+    }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+    .apartment-detail-main {
+        padding: 12px;
+    }
+
+    .detail-card {
+        padding: 12px;
+    }
+
+    #apartment360 {
+        height: 260px;
+    }
+
+    .detail-photo {
+        height: 210px;
+    }
+
+    .detail-button {
+        padding: 10px 12px;
+    }
+}
+
+  

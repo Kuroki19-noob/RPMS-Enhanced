@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../general.css">
+    <link rel="stylesheet" href="../design.css">
+    <link rel="stylesheet" href="apartment.css">
+    <title>Apartments</title>
+</head>
+<body>
+    
+    <nav class="nav-bar">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html">Home</a></li>
+            <li class="nav-item"><a href="apartments.html">apartments</a></li>
+            <li class="nav-item"><a href="contacts.html">contacts</a></li>
+            <li class="nav-item"><a href="about.html">about</a></li>
+        </ul>
+        <ul class="right-nav">
+          <li class="nav-item"><a href="../log-in.html">Log in</a></li>
+          <li class="nav-item"><a href="../sign-up.html">Sign up</a></li>
+        </ul>
+    </nav>
+    
+    
+    <section class="slider">
+
+        <!-- SLIDE 1 -->
+        <div class="slide active">
+
+            <img src="/Assets/apartment-sec1.jpg" loading="lazy" alt="Apartment">
+
+            <!-- Text Overlay -->
+            <div class="slider-text">
+                <h1>Find Your Perfect Apartment</h1>
+                <p>Comfortable living starts here.</p>
+
+                <a href="apartments.html" class="view-button" >
+                    View Apartments
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- SLIDE 2 -->
+        <div class="slide">
+
+            <img src="/Assets/apartment-sec2.jpg" loading="lazy" alt="Modern Apartment">
+
+            <div class="slider-text">
+                <h1>Modern Living</h1>
+                <p>Find a space that feels like home.</p>
+
+                <a href="apartments.html" class="view-button">
+                    View Apartments
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- SLIDE 3 -->
+        <div class="slide">
+
+            <img src="/Assets/apartment-sec3.jpg" loading="lazy" alt="Apartment Interior">
+
+            <div class="slider-text">
+                <h1>Comfortable and Affordable</h1>
+                <p>Your next home is waiting.</p>
+
+                <a href="#about-apartment-sc1" class="view-button">
+                    Apartments
+                </a>
+            </div>
+
+        </div>
+
+
+        <!-- LEFT ARROW -->
+        <button class="arrow previous" onclick="changeSlide(-1)">
+            &#10094;
+        </button>
+
+
+        <!-- RIGHT ARROW -->
+        <button class="arrow next" onclick="changeSlide(1)">
+            &#10095;
+        </button>
+
+
+        <!-- DOTS -->
+        <div class="dots">
+
+            <span class="dot active" onclick="currentSlide(0)"></span>
+
+            <span class="dot" onclick="currentSlide(1)"></span>
+
+            <span class="dot" onclick="currentSlide(2)"></span>
+
+        </div>
+
+    </section>
+    <script src="../function.js"></script>
+    <!--Apartment banner and about the apartment-->
+    <div class="about-apartment-container" style="padding-top: 4rem; ">
+        <div class="about-apartment-image">
+                <img src="/Assets/about-apartment-img1.jpg" alt="resort">
+        </div>
+        <div class="about-apartment-content"> 
+              <h3>Welcome to Apartments</h3>
+
+              <div class="about-apartment-story" id="about-apartment-sc1">
+                <p>
+                    Welcome to your ideal sanctuary. Designed with a seamless blend of modern sophistication and timeless comfort, our luxury apartments offer an elevated living experience tailored to your lifestyle. Every space is thoughtfully crafted, featuring open-concept layouts, expansive windows that flood the rooms with natural light, and premium contemporary finishes throughout.                </p>
+                </p>
+                <p>
+                    Whether you are looking for a serene retreat after a busy day or a vibrant space to entertain, our community provides the perfect backdrop. Step outside your front door to access world-class amenities, including a resort-style swimming pool, a fully equipped fitness center, and beautifully landscaped outdoor lounges. Located in a thriving neighborhood, you are just minutes away from fine dining, boutique shopping, and top-rated entertainment destinations.                </p>
+                </p>
+                    We pride ourselves on offering more than just a place to stay—we provide a welcoming community backed by professional, attentive management and 24/7 dedicated service. Discover the ultimate combination of convenience, style, and relaxation. Make your next move your best one yet and experience luxury living redefined.                </p>
+                <p>
+                    Beyond the high-end design and polished finishes, life here is defined by the details that make every day effortless. Wake up to breathtaking views from your private balcony, enjoy a seamless morning commute with convenient transit access, or work remotely from our executive co-working spaces designed to keep you inspired and productive.                </p>
+                <p>
+                    Our pet-friendly community goes above and beyond to ensure every member of your household feels right at home. Take advantage of our dedicated pet park and grooming station, unwind with neighbors at our evening rooftop socials, or spend a quiet afternoon in the peaceful interior courtyard. Safety and peace of mind are always a priority, featuring secure keyless entry, smart home technology, and controlled-access parking.                </p>
+                <p>
+                    Every element of our residences has been curated to inspire a sense of ease and belonging. From the quiet mornings sipping coffee overlooking the city to the evening sunsets by the outdoor fire pits, you will find a lifestyle where luxury meets warmth. It is not just about finding a new apartment—it is about finding the standard of living you truly deserve. Schedule your private tour today and take the first step toward calling this extraordinary community home.                </p>
+              </div>
+              <a href="../log-in.html" class="apartment-btn">Check in now</a>
+        </div>
+    </div>
+
+   <div class="details-container">
+  <div class="details-wrap">
+    
+    <!-- Apartment Row 1 -->
+    <div class="details-card">
+      <h2>Apartment Details 1</h2>
+      <p><a href="apartment-details.html" class="apartment-btn">View details &amp; 360° tour</a></p>
+      <div class="details-content">
+        <div class="details-item">
+          <img src="/Assets/icons/num-icon.svg" alt="Number icon" class="details-icon">
+          <h3>No.:</h3>
+          <span>12345</span>
+        </div>
+        <div class="details-item">
+          <img src="/Assets/icons/location-icon.svg" alt="Location icon" class="details-icon">
+          <h3>Address:</h3>
+          <span>123 Main St, City</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Apartment Row 2 -->
+    <div class="details-card">
+      <h2>Apartment Details 2</h2>
+      <p><a href="apartment-details.html" class="apartment-btn">View details &amp; 360° tour</a></p>
+      <div class="details-content">
+        <div class="details-item">
+          <img src="/Assets/icons/num-icon.svg" alt="Number icon" class="details-icon">
+          <h3>No.:</h3>
+          <span>67890</span>
+          <span>789 Ocean Blvd, City</span>
+        </div>
+        <div class="details-item">
+          <img src="/Assets/icons/location-icon.svg" alt="Location icon" class="details-icon">
+          <h3>Address:</h3>
+          <span>456 Park Ave, City</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Apartment Row 3 -->
+    <div class="details-card">
+      <h2>Apartment Details 3</h2>
+      <p><a href="apartment-details.html" class="apartment-btn">View details &amp; 360° tour</a></p>
+      <div class="details-content">
+        <div class="details-item">
+          <img src="/Assets/icons/num-icon.svg" alt="Number icon" class="details-icon">
+          <h3>No.:</h3>
+          <span>11223</span>
+        </div>
+        <div class="details-item">
+          <img src="/Assets/icons/location-icon.svg" alt="Location icon" class="details-icon">
+          <h3>Address:</h3>
+          <span>789 Ocean Blvd, City</span>
+        </div>
+       <div class="details-item">
+              <img src="/Assets/icons/mail-icon.svg" alt="mail icon" class="details-icon">
+              <h3>Email:</h3>
+              <span>**********@gmail.com</span>
+
+       </div> 
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    <footer class="container" style="text-align: center; border-top: 1px solid var(--border-color); margin-top: 4rem;">
+        <p>&copy; 2026 Apartment Moto?</p>
+    </footer>
+<script>
+        lucide.createIcons();
+    </script>
+
+</body>
+</html>

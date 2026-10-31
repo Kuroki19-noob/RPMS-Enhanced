@@ -1,0 +1,343 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   SLIDER
+========================= */
+
+.slider {
+
+    /* Use the entire screen width */
+    width: 100%;
+
+    /*
+       Your image is approximately 1352 x 588.
+       This keeps the same 2.3 : 1 proportion.
+    */
+    aspect-ratio: 2.3 / 1;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: black;
+}
+
+
+/* =========================
+   EACH SLIDE
+========================= */
+
+.slide {
+
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+
+    transition: opacity 0.6s ease;
+}
+
+
+/* Current slide */
+
+.slide.active {
+    opacity: 1;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.slide img {
+
+    width: 100%;
+    height: 100%;
+
+    /*
+       Fill the banner while keeping
+       the image's proportions.
+    */
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   DARK TEXT BOX
+========================= */
+
+.slider-text {
+
+    position: absolute;
+
+    left: 8%;
+
+    bottom: 15%;
+
+    /*
+       Dark transparent background
+    */
+    background: rgba(0, 0, 0, 0.60);
+
+    color: white;
+
+    padding: 25px 30px;
+
+    border-radius: 8px;
+
+    max-width: 500px;
+}
+
+
+/* Main title */
+
+.slider-text h1 {
+
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+
+/* Description */
+
+.slider-text p {
+
+    font-size: 18px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+   VIEW APARTMENTS BUTTON
+========================= */
+
+.view-button {
+
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    background: white;
+
+    color: black;
+
+    text-decoration: none;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+
+/* Button hover */
+
+.view-button:hover {
+
+    background: #ddd;
+
+}
+
+
+/* =========================
+   ARROWS
+========================= */
+
+.arrow {
+
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 50px;
+
+    height: 60px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    background: rgba(0, 0, 0, 0.50);
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    z-index: 5;
+
+    transition: 0.3s;
+}
+
+
+/* Arrow hover */
+
+.arrow:hover {
+
+    background: rgba(0, 0, 0, 0.80);
+
+}
+
+
+/* Left arrow */
+
+.previous {
+
+    left: 20px;
+
+}
+
+
+/* Right arrow */
+
+.next {
+
+    right: 20px;
+
+}
+
+
+/* =========================
+   DOTS
+========================= */
+
+.dots {
+
+    position: absolute;
+
+    bottom: 20px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    gap: 10px;
+
+    z-index: 5;
+}
+
+
+.dot {
+
+    width: 12px;
+
+    height: 12px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.55);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* Active dot */
+
+.dot.active {
+
+    background: white;
+
+    transform: scale(1.3);
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+    .slider-text {
+
+        left: 5%;
+
+        bottom: 15%;
+
+        padding: 15px 18px;
+
+        max-width: 75%;
+    }
+
+
+    .slider-text h1 {
+
+        font-size: 22px;
+
+    }
+
+
+    .slider-text p {
+
+        font-size: 14px;
+
+        margin-bottom: 10px;
+
+    }
+
+
+    .view-button {
+
+        padding: 8px 14px;
+
+        font-size: 13px;
+
+    }
+
+
+    .arrow {
+
+        width: 40px;
+
+        height: 45px;
+
+        font-size: 22px;
+
+    }
+
+
+    .previous {
+
+        left: 10px;
+
+    }
+
+
+    .next {
+
+        right: 10px;
+
+    }
+
+}

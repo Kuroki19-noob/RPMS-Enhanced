@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - App name</title>
+    <link rel="stylesheet" href="forms.css">
+</head>
+<body>
+    <div class="signup-container">
+    <h1 class="signup-h1">Sign Up</h1>
+    <form id="login-form" class="form" required>
+        <div class="user-name">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        </div>
+        <div id="password" class="password" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        </div>
+        <div id="confirm-password" class="confirm-password" required>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <div id="email" class="email" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required> <br> 
+        </div>
+
+        <div id="submit" class="submit">
+            <button type="submit">Sign up</button>  
+        </div>
+        <h3 style="display: flex; justify-content:center; align-items:center; padding-top:1rem;">have an account? <a href="log-in.html">Log in</a></h3>
+    </form>
+    
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landlord Dashboard | Staylokal</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../general.css" />
+    <link rel="stylesheet" href="user-design.css" />
+    <link rel="stylesheet" href="management-dashboard.css" />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="logo">
+        <img
+          src="../Assets/icons/logo-icon.gif"
+          alt="Staylokal logo"
+          class="logo-img"
+        />
+        <h3 class="logo-text">Staylokal</h3>
+      </div>
+      <nav class="nav-bar">
+        <ul class="nav-list">
+          <li class="nav-item active">
+            <a href="landlord-dashboard.html"
+              ><i data-lucide="layout-dashboard" class="icon"></i
+              ><span>Dashboard</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#listings"
+              ><i data-lucide="building-2" class="icon"></i
+              ><span>My Apartments</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#requests"
+              ><i data-lucide="calendar-check" class="icon"></i
+              ><span>Requests</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#inquiries"
+              ><i data-lucide="message-square" class="icon"></i
+              ><span>Inquiries</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#payments"
+              ><i data-lucide="wallet" class="icon"></i
+              ><span>Payment Overview</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#profile"
+              ><i data-lucide="user-round" class="icon"></i
+              ><span>Profile</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="account-section">
+        <div class="user-profile">
+          <div
+            class="avatar"
+            style="
+              display: grid;
+              place-items: center;
+              background: #dbeafe;
+              color: #1d4ed8;
+              font-weight: 700;
+            "
+          >
+            LM
+          </div>
+          <div class="user-info">
+            <span class="user-name">Landlord Demo</span
+            ><span class="user-role">Landlord · Prototype</span>
+          </div>
+        </div>
+        <a
+          href="../guest access/index.html"
+          class="user-con-btn"
+          title="Return to home"
+          ><i data-lucide="log-out" class="icon"></i
+        ></a>
+      </div>
+    </aside>
+    <main class="management-main">
+      <header class="management-topbar">
+        <div>
+          <h1>Landlord Dashboard</h1>
+          <p>Manage your apartment listings, tenant requests, and inquiries.</p>
+          <span class="prototype-label">FRONT-END PROTOTYPE · SAMPLE DATA</span>
+        </div>
+        <button class="management-button" id="jumpAdd">
+          <i data-lucide="plus"></i> Add Apartment
+        </button>
+      </header>
+      <div class="management-note">
+        This dashboard uses demonstration data only. Listing changes are
+        temporary in this browser; no real accounts, bookings, or payments are
+        processed.
+      </div>
+      <section class="management-stats" aria-label="Landlord summary">
+        <article class="management-stat">
+          <span>Total Listings</span><strong id="totalListings">3</strong>
+        </article>
+        <article class="management-stat">
+          <span>Available</span><strong id="availableListings">2</strong>
+        </article>
+        <article class="management-stat">
+          <span>Pending Requests</span><strong id="pendingRequests">2</strong>
+        </article>
+        <article class="management-stat">
+          <span>New Inquiries</span><strong>3</strong>
+        </article>
+      </section>
+      <div class="management-grid">
+        <section class="management-panel" id="listings">
+          <div class="management-panel-head">
+            <h2>My Apartment Listings</h2>
+            <span class="status-pill">Landlord view</span>
+          </div>
+          <div class="management-table-wrap">
+            <table class="management-table">
+              <thead>
+                <tr>
+                  <th>Apartment</th>
+                  <th>Monthly Rent</th>
+                  <th>Status</th>
+                  <th>360 Panorama</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="landlordListings">
+                <tr data-status="Available">
+                  <td>Sunrise Apartment</td>
+                  <td>₱5,000</td>
+                  <td><span class="status-pill available">Available</span></td>
+                  <td>Not added</td>
+                  <td>
+                    <div class="management-actions">
+                      <button data-action="toggle">Mark occupied</button
+                      ><button data-action="panorama">Set panorama</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-status="Available">
+                  <td>Greenview Studio</td>
+                  <td>₱6,500</td>
+                  <td><span class="status-pill available">Available</span></td>
+                  <td>Not added</td>
+                  <td>
+                    <div class="management-actions">
+                      <button data-action="toggle">Mark occupied</button
+                      ><button data-action="panorama">Set panorama</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr data-status="Occupied">
+                  <td>City Nest Unit 2</td>
+                  <td>₱7,000</td>
+                  <td><span class="status-pill">Occupied</span></td>
+                  <td>Not added</td>
+                  <td>
+                    <div class="management-actions">
+                      <button data-action="toggle">Mark available</button
+                      ><button data-action="panorama">Set panorama</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+        <section class="management-panel" id="requests">
+          <h2>Booking Requests</h2>
+          <div class="management-table-wrap">
+            <table class="management-table" style="min-width: 420px">
+              <thead>
+                <tr>
+                  <th>Renter</th>
+                  <th>Apartment</th>
+                  <th>Status / Action</th>
+                </tr>
+              </thead>
+              <tbody id="landlordRequests">
+                <tr>
+                  <td>Alex Santos</td>
+                  <td>Sunrise Apartment</td>
+                  <td>
+                    <span class="status-pill pending">Pending</span>
+                    <div class="management-actions">
+                      <button data-request="approve">Approve</button
+                      ><button data-request="reject">Reject</button>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Mia Reyes</td>
+                  <td>Greenview Studio</td>
+                  <td>
+                    <span class="status-pill pending">Pending</span>
+                    <div class="management-actions">
+                      <button data-request="approve">Approve</button
+                      ><button data-request="reject">Reject</button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+      <section class="management-panel" id="inquiries">
+        <h2>Recent Inquiries</h2>
+        <div class="management-table-wrap">
+          <table class="management-table">
+            <thead>
+              <tr>
+                <th>Prospective renter</th>
+                <th>Apartment</th>
+                <th>Message</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Jamie Cruz</td>
+                <td>Sunrise Apartment</td>
+                <td>Is the unit available for viewing this weekend?</td>
+                <td><span class="status-pill pending">Needs reply</span></td>
+              </tr>
+              <tr>
+                <td>Pat Dela Rosa</td>
+                <td>Greenview Studio</td>
+                <td>Are utilities included in the monthly rent?</td>
+                <td><span class="status-pill">Read</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="management-panel" id="addListing">
+        <div class="management-panel-head">
+          <h2>Add an Apartment (Demo)</h2>
+          <span class="status-pill">Temporary only</span>
+        </div>
+        <form class="management-form" id="addApartmentForm">
+          <label
+            >Apartment name<input
+              name="name"
+              required
+              placeholder="e.g. Garden View Studio" /></label
+          ><label
+            >Monthly rent (₱)<input
+              name="rent"
+              type="number"
+              min="1"
+              required
+              placeholder="6500" /></label
+          ><label
+            >Availability<select name="status">
+              <option>Available</option>
+              <option>Occupied</option>
+            </select></label
+          ><label
+            >360 panorama image path<input
+              name="panorama"
+              placeholder="../Assets/panoramas/unit-1.jpg" /></label
+          ><label class="full-width"
+            >Description<textarea
+              name="description"
+              rows="2"
+              placeholder="Short apartment description"
+            ></textarea>
+          </label>
+          <div class="full-width">
+            <button class="management-button" type="submit">
+              Add demo listing
+            </button>
+          </div>
+        </form>
+      </section>
+      <section class="management-panel" id="payments">
+        <h2>Payment Overview</h2>
+        <p>
+          Sample records only — this page does not collect payment information
+          or process payments.
+        </p>
+        <div class="management-table-wrap">
+          <table class="management-table">
+            <thead>
+              <tr>
+                <th>Apartment</th>
+                <th>Rental amount</th>
+                <th>Demo payment status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>City Nest Unit 2</td>
+                <td>₱7,000</td>
+                <td><span class="status-pill approved">Sample paid</span></td>
+              </tr>
+              <tr>
+                <td>Sunrise Apartment</td>
+                <td>₱5,000</td>
+                <td>
+                  <span class="status-pill pending">Awaiting demo payment</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="management-panel" id="profile">
+        <h2>Profile & Settings</h2>
+        <p>
+          <strong>Name:</strong> Landlord Demo &nbsp;
+          <strong>Role:</strong> Landlord &nbsp;
+          <strong>Account:</strong> Sample profile
+        </p>
+        <a class="management-button secondary" href="../guest access/index.html"
+          >Return to public website</a
+        >
+      </section>
+    </main>
+    <script src="management-dashboard.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

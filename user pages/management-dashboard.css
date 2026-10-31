@@ -1,0 +1,300 @@
+/* Shared styling for Staylokal landlord and admin prototype dashboards */
+.management-main {
+    margin-left: 260px;
+    padding: 28px;
+    min-height: 100vh;
+    background: #f8fafc;
+    color: #0f172a;
+    box-sizing: border-box;
+}
+
+.management-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.management-topbar h1 {
+    margin: 0 0 5px;
+    font-size: 1.8rem;
+}
+
+.management-topbar p {
+    margin: 0;
+    color: #64748b;
+}
+
+.prototype-label {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 9px;
+    border-radius: 20px;
+    background: #fff7ed;
+    color: #9a3412;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.management-button {
+    border: 0;
+    border-radius: 8px;
+    padding: 10px 14px;
+    background: #2563eb;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: .9rem;
+}
+
+.management-button.secondary {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.management-button.danger {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.management-button:hover {
+    filter: brightness(.96);
+}
+
+.management-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.management-stat,
+.management-panel {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 2px 5px rgba(15, 23, 42, .03);
+    min-width: 0;
+}
+
+.management-stat span {
+    color: #64748b;
+    font-size: .85rem;
+}
+
+.management-stat strong {
+    display: block;
+    font-size: 1.8rem;
+    margin-top: 8px;
+}
+
+.management-panel {
+    margin-bottom: 20px;
+}
+
+.management-panel h2 {
+    margin: 0 0 14px;
+    font-size: 1.1rem;
+}
+
+.management-panel-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.management-panel-head h2 {
+    margin: 0;
+}
+
+.management-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.management-table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 620px;
+    font-size: .9rem;
+}
+
+.management-table th,
+.management-table td {
+    text-align: left;
+    padding: 12px 10px;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: middle;
+}
+
+.management-table th {
+    color: #64748b;
+    font-size: .75rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.management-table tr:last-child td {
+    border-bottom: 0;
+}
+
+.status-pill {
+    display: inline-block;
+    border-radius: 20px;
+    padding: 4px 8px;
+    background: #e2e8f0;
+    color: #334155;
+    font-size: .75rem;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-pill.available,
+.status-pill.approved,
+.status-pill.active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-pill.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-pill.rejected,
+.status-pill.inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.management-actions {
+    display: flex;
+    gap: 7px;
+    flex-wrap: wrap;
+}
+
+.management-actions button {
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    padding: 6px 9px;
+    background: #fff;
+    cursor: pointer;
+    font-size: .8rem;
+}
+
+.management-note {
+    padding: 12px 14px;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #1e40af;
+    font-size: .88rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.management-grid {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 18px;
+}
+
+.management-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.management-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: .85rem;
+    color: #475569;
+}
+
+.management-form input,
+.management-form select,
+.management-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    font: inherit;
+    box-sizing: border-box;
+    background: #fff;
+    color: #0f172a;
+}
+
+.management-form .full-width {
+    grid-column: 1/-1;
+}
+
+.management-empty {
+    color: #64748b;
+    padding: 12px 0;
+}
+
+.management-main .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    padding: 0 8px;
+}
+
+.management-main .logo img {
+    width: 34px;
+    height: 34px;
+    object-fit: contain;
+}
+
+.management-main .logo h3 {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+@media(max-width:1050px) {
+    .management-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .management-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:768px) {
+    .management-main {
+        margin-left: 0;
+        padding: 18px;
+    }
+
+    .management-topbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .management-stats {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .management-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media(max-width:420px) {
+    .management-stats {
+        grid-template-columns: 1fr;
+    }
+}

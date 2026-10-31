@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | Staylokal</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="../general.css" />
+    <link rel="stylesheet" href="user-design.css" />
+    <link rel="stylesheet" href="management-dashboard.css" />
+    
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="logo">
+        <img
+          src="../Assets/icons/logo-icon.gif"
+          alt="Staylokal logo"
+          class="logo-img"
+        />
+        <h3 class="logo-text">Staylokal</h3>
+      </div>
+      <nav class="nav-bar">
+        <ul class="nav-list">
+          <li class="nav-item active">
+            <a href="admin-dashboard.html"
+              ><i data-lucide="layout-dashboard" class="icon"></i
+              ><span>Overview</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#users"
+              ><i data-lucide="users" class="icon"></i
+              ><span>User Accounts</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#listings"
+              ><i data-lucide="building-2" class="icon"></i
+              ><span>Listings Review</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#activity"
+              ><i data-lucide="clipboard-list" class="icon"></i
+              ><span>Bookings & Inquiries</span></a
+            >
+          </li>
+          <li class="nav-item">
+            <a href="#settings"
+              ><i data-lucide="settings" class="icon"></i
+              ><span>Platform Info</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <div class="account-section">
+        <div class="user-profile">
+          <div
+            class="avatar"
+            style="
+              display: grid;
+              place-items: center;
+              background: #ede9fe;
+              color: #6d28d9;
+              font-weight: 700;
+            "
+          >
+            AD
+          </div>
+          <div class="user-info">
+            <span class="user-name">Admin Demo</span
+            ><span class="user-role">Administrator · Prototype</span>
+          </div>
+        </div>
+        <a
+          href="../guest access/index.html"
+          class="user-con-btn"
+          title="Return to home"
+          ><i data-lucide="log-out" class="icon"></i
+        ></a>
+      </div>
+    </aside>
+    <main class="management-main">
+      <header class="management-topbar">
+        <div>
+          <h1>Admin Dashboard</h1>
+          <p>
+            Monitor the platform, review listings, and manage demo account
+            statuses.
+          </p>
+          <span class="prototype-label">FRONT-END PROTOTYPE · SAMPLE DATA</span>
+        </div>
+        <a class="management-button secondary" href="../guest access/index.html"
+          >View public website</a
+        >
+      </header>
+      <div class="management-note">
+        Administrator controls below only change sample data in this page. They
+        are not secure account controls and do not update a server or database.
+      </div>
+      <section class="management-stats">
+        <article class="management-stat">
+          <span>Registered Users</span><strong id="adminUsersCount">24</strong>
+        </article>
+        <article class="management-stat">
+          <span>Landlords</span><strong>6</strong>
+        </article>
+        <article class="management-stat">
+          <span>Total Listings</span><strong id="adminListingsCount">12</strong>
+        </article>
+        <article class="management-stat">
+          <span>Pending Review</span><strong id="pendingReviewCount">2</strong>
+        </article>
+      </section>
+      <section class="management-panel" id="users">
+        <div class="management-panel-head">
+          <h2>User Account Overview</h2>
+          <input
+            id="userSearch"
+            aria-label="Search users"
+            placeholder="Search name or role..."
+            style="
+              max-width: 250px;
+              padding: 9px;
+              border: 1px solid #cbd5e1;
+              border-radius: 7px;
+            "
+          />
+        </div>
+        <div class="management-table-wrap">
+          <table class="management-table">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Role</th>
+                <th>Email</th>
+                <th>Account status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="adminUsers">
+              <tr>
+                <td>Alex Santos</td>
+                <td>Renter</td>
+                <td>alex@example.test</td>
+                <td><span class="status-pill active">Active</span></td>
+                <td>
+                  <button data-user-action="deactivate">Deactivate</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Jamie Cruz</td>
+                <td>Renter</td>
+                <td>jamie@example.test</td>
+                <td><span class="status-pill active">Active</span></td>
+                <td>
+                  <button data-user-action="deactivate">Deactivate</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Landlord Demo</td>
+                <td>Landlord</td>
+                <td>owner@example.test</td>
+                <td><span class="status-pill active">Active</span></td>
+                <td>
+                  <button data-user-action="deactivate">Deactivate</button>
+                </td>
+              </tr>
+              <tr>
+                <td>Greenview Rentals</td>
+                <td>Landlord</td>
+                <td>greenview@example.test</td>
+                <td><span class="status-pill inactive">Inactive</span></td>
+                <td><button data-user-action="activate">Activate</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="management-panel" id="listings">
+        <div class="management-panel-head">
+          <h2>Apartment Listing Review</h2>
+          <span class="status-pill pending">Requires review</span>
+        </div>
+        <div class="management-table-wrap">
+          <table class="management-table">
+            <thead>
+              <tr>
+                <th>Apartment</th>
+                <th>Submitted by</th>
+                <th>Rent / month</th>
+                <th>Review status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="adminListings">
+              <tr>
+                <td>Garden View Studio</td>
+                <td>Greenview Rentals</td>
+                <td>₱6,000</td>
+                <td><span class="status-pill pending">Pending</span></td>
+                <td>
+                  <div class="management-actions">
+                    <button data-listing-action="approve">Approve</button
+                    ><button data-listing-action="reject">Reject</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>Sunrise Apartment</td>
+                <td>Landlord Demo</td>
+                <td>₱5,000</td>
+                <td><span class="status-pill approved">Approved</span></td>
+                <td>
+                  <div class="management-actions">
+                    <button data-listing-action="review">Mark pending</button>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td>City Nest Unit 2</td>
+                <td>Landlord Demo</td>
+                <td>₱7,000</td>
+                <td><span class="status-pill rejected">Rejected</span></td>
+                <td>
+                  <div class="management-actions">
+                    <button data-listing-action="review">Mark pending</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="management-panel" id="activity">
+        <h2>Bookings & Inquiries Monitoring</h2>
+        <div class="management-table-wrap">
+          <table class="management-table">
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>Apartment</th>
+                <th>Submitted by</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Booking request</td>
+                <td>Sunrise Apartment</td>
+                <td>Alex Santos</td>
+                <td><span class="status-pill pending">Pending</span></td>
+              </tr>
+              <tr>
+                <td>Inquiry</td>
+                <td>Greenview Studio</td>
+                <td>Jamie Cruz</td>
+                <td><span class="status-pill">Open</span></td>
+              </tr>
+              <tr>
+                <td>Booking request</td>
+                <td>City Nest Unit 2</td>
+                <td>Mia Reyes</td>
+                <td><span class="status-pill approved">Approved</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+      <section class="management-panel" id="settings">
+        <h2>Platform Information</h2>
+        <p><strong>Platform:</strong> Staylokal rental apartment prototype</p>
+        <p>
+          <strong>Implementation:</strong> HTML, CSS, vanilla JavaScript, mock
+          data, Pannellum 360-degree viewer
+        </p>
+        <p><strong>Data storage:</strong> No backend or database connected</p>
+        <p><strong>Payments:</strong> No real payment processing</p>
+      </section>
+    </main>
+    <script src="management-dashboard.js"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

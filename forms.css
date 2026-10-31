@@ -1,0 +1,97 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "DM sans", sans-serif; 
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #020024;
+    background: linear-gradient(90deg, rgba(157, 78, 221, 1) 0%,
+        rgba(255, 117, 143, 1) 50%, 
+        rgba(114, 239, 221, 1) 100%);
+    background-size: 400% 400%; 
+    animation: animate-background 15s ease infinite;
+    font-family: 'DM Sans', sans-serif;
+}
+@keyframes animate-background {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+.signup-container {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+.signup-h1 {
+    font-family: "Oswald", sans-serif;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.form {
+    width: 100%;
+}
+
+.user-name, 
+.password,
+.confirm-password,
+.email {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 0.3rem;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"], 
+input[type="confirm-password"], 
+input[type="email"] {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.submit {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.submit button {
+    height: 3rem;
+    width: 100%;
+    color: white;
+    background-color: black;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.submit button:hover {
+    background-color: white;
+    color:black;
+    border:solid 1px black;
+}
