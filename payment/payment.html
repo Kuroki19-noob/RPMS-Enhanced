@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staylokal - Payment</title>
+    <link rel="stylesheet" href="/general.css">
+    <link rel="stylesheet" href="/design.css">
+    <link rel="stylesheet" href="payment.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <h2>Staylokal</h2>
+        <span>Secure Checkout (Demo)</span>
+    </header>
+    <main class="payment-container">
+
+        <section class="apartment-summary">
+            <h1>Complete Your Payment</h1>
+
+            <div class="apartment-card">
+                <img src="../Assets/apartment-sec1.jpg"
+                     alt="Sample apartment">
+
+                <div>
+                    <h3 id="apartmentName">Sample Apartment</h3>
+                    <p>Monthly rental payment</p>
+                    <h2 id="apartmentPrice">₱5,000</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="payment-card">
+            <h2>Payment Method</h2>
+
+            <label class="gcash-option">
+                <input type="radio" name="paymentMethod"
+                       value="GCash" checked>
+                <span class="gcash-logo">G</span>
+
+                <div>
+                    <strong>GCash (Demo)</strong>
+                    <p>Simulated digital wallet payment</p>
+                </div>
+            </label>
+
+            <div class="notice">
+                This is a prototype. No real money will be transferred.
+            </div>
+
+            <div class="payment-total">
+                <span>Total Amount</span>
+                <strong id="totalAmount">₱5,000</strong>
+            </div>
+
+            <button id="payButton" type="button">
+                Confirm Demo Payment
+            </button>
+
+            <div id="receipt" class="receipt hidden">
+                <h2>Payment Successful!</h2>
+                <p>This transaction is a simulation only.</p>
+
+                <p>Apartment: <span id="receiptApartment"></span></p>
+                <p>Amount: <span id="receiptAmount"></span></p>
+                <p>Method: <span id="receiptMethod"></span></p>
+                <p>Status: <span id="receiptStatus"></span></p>
+                <p>Reference: <span id="receiptReference"></span></p>
+                <p>Date: <span id="receiptDate"></span></p>
+
+                <button id="printButton" type="button">
+                    Print Receipt
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="/function.js"></script>
+</body>
+</html>

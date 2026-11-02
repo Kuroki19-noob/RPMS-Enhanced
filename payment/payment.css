@@ -1,0 +1,220 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+}
+
+.navbar {
+    background: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.navbar h2 {
+    color: #1769aa;
+}
+
+.navbar span {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.payment-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.apartment-summary h1 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.apartment-card,
+.payment-card {
+    background: white;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+}
+
+.apartment-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 18px;
+}
+
+.apartment-card h3 {
+    margin-bottom: 8px;
+}
+
+.apartment-card p,
+.gcash-option p {
+    color: #64748b;
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.apartment-card h2 {
+    color: #1769aa;
+    margin-top: 15px;
+}
+
+.payment-card h2 {
+    margin-bottom: 20px;
+}
+
+.gcash-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #1769aa;
+    border-radius: 10px;
+    padding: 16px;
+    cursor: pointer;
+}
+
+.gcash-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    background: #0877d1;
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.notice {
+    margin-top: 20px;
+    padding: 12px;
+    background: #fff7e6;
+    color: #875b10;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.payment-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0;
+    padding-top: 20px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.payment-total strong {
+    font-size: 22px;
+    color: #1769aa;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #1769aa;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background: #10558d;
+}
+
+.receipt {
+    margin-top: 25px;
+    padding: 18px;
+    border: 1px solid #a7e3bd;
+    border-radius: 10px;
+    background: #f0fdf4;
+    overflow-wrap: anywhere;
+}
+
+.receipt h2 {
+    color: #15803d;
+    margin-bottom: 8px;
+}
+
+.receipt p {
+    margin: 12px 0;
+    font-size: 14px;
+}
+
+.receipt button {
+    margin-top: 15px;
+}
+
+.hidden {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .payment-container {
+        grid-template-columns: 1fr;
+        margin: 15px auto;
+    }
+
+    .navbar {
+        padding: 18px 5%;
+        gap: 12px;
+    }
+
+    .navbar span {
+        text-align: right;
+    }
+}
+
+@media print {
+    .navbar,
+    .apartment-summary,
+    .payment-card > h2,
+    .gcash-option,
+    .notice,
+    .payment-total,
+    #payButton,
+    #printButton {
+        display: none !important;
+    }
+
+    body {
+        background: white;
+    }
+
+    .payment-container {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    .payment-card {
+        box-shadow: none;
+    }
+
+    .receipt {
+        display: block !important;
+        border: none;
+        background: white;
+    }
+}

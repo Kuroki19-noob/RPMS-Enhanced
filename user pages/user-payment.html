@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>user-payment</title>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="/general.css">
+    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="../payment/payment.css">
+    <link rel="stylesheet" href="/user pages/user-design.css">
+</head>
+<body>
+    <div class="dashboard-container">
+    <aside class="sidebar">
+  <!-- Brand Logo -->
+  <div class="logo">
+    <img src="/Assets/icons/logo-icon.gif" alt="Logo" class="logo-img">
+    <h3 class="logo-text">Staylokal</h3>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="nav-bar">
+    <ul class="nav-list">
+      <li class="nav-item">
+        <a href="user-dashboard.html">
+          <i data-lucide="home" class="icon"></i>
+          <span>Dashboard</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="user-apartment.html">
+          <i data-lucide="building" class="icon"></i>
+          <span>Apartment</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="user-saved-apartment.html">
+          <i data-lucide="bookmark" class="icon"></i>
+          <span>Saved Apartments</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a href="user-inquiries.html">
+          <i data-lucide="message-square" class="icon"></i>
+          <span>Inquiries</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a href="user-reports.html">
+          <i data-lucide="flag" class="icon"></i>
+          <span>Reports</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- User Account / Footer Section -->
+  <div class="account-section">
+    <div class="user-profile">
+      <img src="/images/avatar.jpg" alt="User Avatar" class="avatar">
+      <div class="user-info">
+        <span class="user-name">Navales Pisbok</span>
+        <span class="user-role">Tenant</span>
+      </div>
+    </div>
+    <a href="../log-in.html" class="user-con-btn" title="Logout">
+      <i data-lucide="log-out" class="icon"></i>
+    <a href="settings.html" class="user-con-btn"></a>
+      <i data-lucide="settings" class="icon" ></i>
+    </a>
+  </div>
+</aside>
+</div>
+    
+    <main class="payment-container">
+
+        <section class="apartment-summary">
+            <h1>Complete Your Payment</h1>
+
+            <div class="apartment-card">
+                <img src="../Assets/apartment-sec1.jpg"
+                     alt="Sample apartment">
+
+                <div>
+                    <h3 id="apartmentName">Sample Apartment</h3>
+                    <p>Monthly rental payment</p>
+                    <h2 id="apartmentPrice">₱5,000</h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="payment-card">
+            <h2>Payment Method</h2>
+
+            <label class="gcash-option">
+                <input type="radio" name="paymentMethod"
+                       value="GCash" checked>
+                <span class="gcash-logo">G</span>
+
+                <div>
+                    <strong>GCash (Demo)</strong>
+                    <p>Simulated digital wallet payment</p>
+                </div>
+            </label>
+
+            <div class="notice">
+                This is a prototype. No real money will be transferred.
+            </div>
+
+            <div class="payment-total">
+                <span>Total Amount</span>
+                <strong id="totalAmount">₱5,000</strong>
+            </div>
+
+            <button id="payButton" type="button">
+                Confirm Demo Payment
+            </button>
+
+            <div id="receipt" class="receipt hidden">
+                <h2>Payment Successful!</h2>
+                <p>This transaction is a simulation only.</p>
+
+                <p>Apartment: <span id="receiptApartment"></span></p>
+                <p>Amount: <span id="receiptAmount"></span></p>
+                <p>Method: <span id="receiptMethod"></span></p>
+                <p>Status: <span id="receiptStatus"></span></p>
+                <p>Reference: <span id="receiptReference"></span></p>
+                <p>Date: <span id="receiptDate"></span></p>
+
+                <button id="printButton" type="button">
+                    Print Receipt
+                </button>
+            </div>
+        </section>
+
+
+    <script src="/function.js"></script>
+    </main>
+<script>
+      lucide.createIcons();
+    </script>
+    <script src="design.js"></script>
+
+</body>
+</html>
