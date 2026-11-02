@@ -1,16 +1,186 @@
-<!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Apartment Details | Staylokal</title>
-<link rel="stylesheet" href="../general.css"><link rel="stylesheet" href="../design.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
-<style>
-.public-detail{max-width:1150px;margin:28px auto;padding:0 20px;color:#0f172a}.public-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:22px;margin:18px 0}.public-hero{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}.public-photo{width:100%;height:320px;object-fit:cover;border-radius:10px}.public-price{font-size:1.4rem;font-weight:800;color:#1d4ed8}#guestApartment360{width:100%;height:420px;border-radius:10px;overflow:hidden;background:#e2e8f0}.public-help{font-size:.88rem;color:#64748b;line-height:1.5}.public-btn{display:inline-block;border:0;border-radius:8px;padding:11px 15px;background:#2563eb;color:white;text-decoration:none;font-weight:700;margin:4px 6px 0 0}.public-btn.secondary{background:#e2e8f0;color:#0f172a}
-@media(max-width:800px){.public-hero{grid-template-columns:1fr}#guestApartment360{height:320px}.public-photo{height:250px}}
-</style></head><body>
-<nav class="nav-bar"><ul class="nav-list"><li class="nav-item"><a href="index.html">Home</a></li><li class="nav-item"><a href="apartments.html">Apartments</a></li><li class="nav-item"><a href="contacts.html">Contacts</a></li><li class="nav-item"><a href="about.html">About</a></li></ul><ul class="right-nav"><li class="nav-item"><a href="../log-in.html">Log in</a></li><li class="nav-item"><a href="../sign-up.html">Sign up</a></li></ul></nav>
-<main class="public-detail"><a href="apartments.html" style="color:#2563eb;text-decoration:none;font-weight:600">← Back to apartments</a>
-<section class="public-card public-hero"><div><img class="public-photo" src="../Assets/apartment-sec1.jpg" alt="Apartment example photo"><p class="public-help">Sample listing image. Replace with the actual apartment photo.</p></div><div><span style="display:inline-block;padding:5px 9px;border-radius:20px;background:#dcfce7;color:#166534;font-size:.75rem;font-weight:700">Sample listing · Available</span><h1>Sunrise Apartment</h1><p class="public-price">₱5,000 <span style="font-size:.9rem;color:#64748b;font-weight:400">/ month</span></p><p>Comfortable apartment near everyday essentials. Guests can view this sample listing and explore the 360-degree demo before deciding whether to contact the owner.</p><p><strong>Location:</strong> San Jose del Monte, Bulacan</p><p><strong>Features:</strong> Bedroom, private bathroom, kitchen area</p><a class="public-btn" href="../log-in.html">Log in to inquire</a><a class="public-btn secondary" href="../sign-up.html">Register</a></div></section>
-<section class="public-card"><h2>Explore the apartment in 360°</h2><p class="public-help">Drag or swipe to look around. Use viewer controls to zoom or enter fullscreen. This official Pannellum sample panorama is for demonstration only and is not a real view of Sunrise Apartment.</p><div id="guestApartment360">Loading 360-degree panorama…</div><p id="guestViewerStatus" class="public-help" aria-live="polite">Loading sample panorama.</p></section>
-</main><script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script><script>
-const status = document.getElementById('guestViewerStatus');
-if (window.pannellum) { try { pannellum.viewer('guestApartment360',{type:'equirectangular',panorama:'https://pannellum.org/images/alma.jpg',autoLoad:true,showZoomCtrl:true,showFullscreenCtrl:true,compass:false,hfov:100}); status.textContent='Sample panorama selected. Internet access is required to load the external demo image.'; } catch(e) { status.textContent='Could not start the panorama viewer. Check the image path and Pannellum connection.'; } }
-else { document.getElementById('guestApartment360').textContent='Pannellum did not load. Check your internet connection.'; status.textContent='Viewer library unavailable.'; }
-</script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apartment Details | Staylokal</title>
+    <link rel="stylesheet" href="../general.css" />
+    <link rel="stylesheet" href="../design.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"
+    />
+    <style>
+      .public-detail {
+        max-width: 1150px;
+        margin: 28px auto;
+        padding: 0 20px;
+        color: #0f172a;
+      }
+      .public-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 22px;
+        margin: 18px 0;
+      }
+      .public-hero {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 22px;
+      }
+      .public-photo {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .public-price {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: #1d4ed8;
+      }
+      #guestApartment360 {
+        width: 100%;
+        height: 420px;
+        border-radius: 10px;
+        overflow: hidden;
+        background: #e2e8f0;
+      }
+      .public-help {
+        font-size: 0.88rem;
+        color: #64748b;
+        line-height: 1.5;
+      }
+      .public-btn {
+        display: inline-block;
+        border: 0;
+        border-radius: 8px;
+        padding: 11px 15px;
+        background: #2563eb;
+        color: white;
+        text-decoration: none;
+        font-weight: 700;
+        margin: 4px 6px 0 0;
+      }
+      .public-btn.secondary {
+        background: #e2e8f0;
+        color: #0f172a;
+      }
+      @media (max-width: 800px) {
+        .public-hero {
+          grid-template-columns: 1fr;
+        }
+        #guestApartment360 {
+          height: 320px;
+        }
+        .public-photo {
+          height: 250px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <ul class="nav-list">
+        <li class="nav-item"><a href="index.html">Home</a></li>
+        <li class="nav-item"><a href="apartments.html">Apartments</a></li>
+        <li class="nav-item"><a href="contacts.html">Contacts</a></li>
+        <li class="nav-item"><a href="about.html">About</a></li>
+      </ul>
+      <ul class="right-nav">
+        <li class="nav-item"><a href="../log-in.html">Log in</a></li>
+        <li class="nav-item"><a href="../sign-up.html">Sign up</a></li>
+      </ul>
+    </nav>
+    <main class="public-detail">
+      <a
+        href="apartments.html"
+        style="color: #2563eb; text-decoration: none; font-weight: 600"
+        >← Back to apartments</a
+      >
+      <section class="public-card public-hero">
+        <div>
+          <img
+            class="public-photo"
+            src="../Assets/apartment-sec1.jpg"
+            alt="Apartment example photo"
+          />
+          <p class="public-help">
+            Sample listing image. Replace with the actual apartment photo.
+          </p>
+        </div>
+        <div>
+          <span
+            style="
+              display: inline-block;
+              padding: 5px 9px;
+              border-radius: 20px;
+              background: #dcfce7;
+              color: #166534;
+              font-size: 0.75rem;
+              font-weight: 700;
+            "
+            >Sample listing · Available</span
+          >
+          <h1>Sunrise Apartment</h1>
+          <p class="public-price">
+            ₱5,000
+            <span style="font-size: 0.9rem; color: #64748b; font-weight: 400"
+              >/ month</span
+            >
+          </p>
+          <p>
+            Comfortable apartment near everyday essentials. Guests can view this
+            sample listing and explore the 360-degree demo before deciding
+            whether to contact the owner.
+          </p>
+          <p><strong>Location:</strong> San Jose del Monte, Bulacan</p>
+          <p>
+            <strong>Features:</strong> Bedroom, private bathroom, kitchen area
+          </p>
+          <a class="public-btn" href="../log-in.html">Log in to inquire</a
+          ><a class="public-btn secondary" href="../sign-up.html">Register</a>
+        </div>
+      </section>
+      <section class="public-card">
+        <h2>Explore the apartment in 360°</h2>
+        <p class="public-help">
+          Drag or swipe to look around. Use viewer controls to zoom or enter
+          fullscreen. This official Pannellum sample panorama is for
+          demonstration only and is not a real view of Sunrise Apartment.
+        </p>
+        <div id="guestApartment360">Loading 360-degree panorama…</div>
+        <p id="guestViewerStatus" class="public-help" aria-live="polite">
+          Loading sample panorama.
+        </p>
+      </section>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+    <script>
+      const status = document.getElementById("guestViewerStatus");
+      if (window.pannellum) {
+        try {
+          pannellum.viewer("guestApartment360", {
+            type: "equirectangular",
+            panorama: "https://pannellum.org/images/alma.jpg",
+            autoLoad: true,
+            showZoomCtrl: true,
+            showFullscreenCtrl: true,
+            compass: false,
+            hfov: 100,
+          });
+          status.textContent =
+            "Sample panorama selected. Internet access is required to load the external demo image.";
+        } catch (e) {
+          status.textContent =
+            "Could not start the panorama viewer. Check the image path and Pannellum connection.";
+        }
+      } else {
+        document.getElementById("guestApartment360").textContent =
+          "Pannellum did not load. Check your internet connection.";
+        status.textContent = "Viewer library unavailable.";
+      }
+    </script>
+  </body>
+</html>
